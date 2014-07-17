@@ -41,6 +41,8 @@ public class CronDSLTest {
 				cronDSL.convert("the nearest weekday to the 15th of every month"));
 		assertEquals("0 0 0 LW 1 ?",
 				cronDSL.convert("last weekday of the month"));
+		assertEquals("0 0 0 L * ?",
+				cronDSL.convert("on the last day of every month"));
 	}
 	
 	@Test
@@ -51,7 +53,7 @@ public class CronDSLTest {
 				cronDSL.convert("every 2nd month starting from May"));
 		assertEquals("0 0 0 1 1-5 ?", cronDSL.convert("from January to May"));
 		assertEquals("0 0 0 1 1,5,10 ?",
-				cronDSL.convert("January, May and October"));
+				cronDSL.convert("Fire at January, May and October"));
 	}
 	
 	@Test

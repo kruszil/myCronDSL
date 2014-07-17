@@ -519,6 +519,7 @@ public class CronDSL {
 		return positions;
 	}
 
+	//recursive check for numeric values in words from start("day" in this particular example) until "on" keyword
 	private static List<String> checkAndBuildNumericValues(
 			List<String> numbers, List<String> words, int start) {
 		if (!checkForNumericValue(words.get(start)).isEmpty()) {
